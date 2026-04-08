@@ -299,11 +299,11 @@ z-index:100 !important;">
 </div>
     <div class="top-nav glass-card">
       <div class="back-btn" onclick="goTo('s-splash')">←</div>
-      <div class="nav-title">Your Language</div>
+      <div class="nav-title">What language do you speak?</div>
       <div class="nav-right"></div>
     </div>
 
-    <div class="subtitle">Baashha will translate<br>everything into this for you</div>
+    <div class="subtitle">Baashha will transcribe your<br>voice in this language</div>
 
     <div class="search-bar glass-card">
       <input type="text" class="search-input" placeholder="Search languages...">
@@ -311,6 +311,11 @@ z-index:100 !important;">
 
     <div class="section-label">INDIAN LANGUAGES</div>
     <div class="lang-grid">
+      <div class="lang-card glass-card" onclick="selectLang(this)">
+        <div class="lang-script">English</div>
+        <div class="lang-name">English</div>
+        <div class="region-badge">GLOBAL</div>
+      </div>
       <div class="lang-card glass-card" onclick="selectLang(this)">
         <div class="lang-script">தமிழ்</div>
         <div class="lang-name">Tamil</div>
@@ -374,128 +379,33 @@ z-index:100 !important;">
     </div>
 
     <div class="section-label">OTHER LANGUAGES</div>
-<div style="
-  display:flex;
-  flex-direction:row;
-  overflow-x:scroll;
-  overflow-y:hidden;
-  white-space:nowrap;
-  padding:8px 16px 16px 16px;
-  gap:10px;
-  width:100%;
-  box-sizing:border-box;
-  -webkit-overflow-scrolling:touch;">
-
-  <div style="
-    display:inline-flex;
-    flex-direction:column;
-    align-items:center;
-    min-width:90px;
-    flex-shrink:0;
-    background:rgba(255,255,255,0.65);
-    border:1px solid rgba(193,127,36,0.25);
-    border-radius:16px;
-    padding:14px 10px;
-    cursor:pointer;"
-    onclick="this.style.border=
-    '1.5px solid #C17F24'">
-    <span style="font-size:20px;
-    font-weight:700;color:#1A1208;">
-    日本語</span>
-    <span style="font-size:11px;
-    color:#6B5B3E;margin-top:4px;">
-    Japanese</span>
+<div class="other-lang-row">
+  <div class="lang-card glass-card" onclick="selectLang(this)">
+    <div class="lang-script">日本語</div>
+    <div class="lang-name">Japanese</div>
   </div>
-
-  <div style="
-    display:inline-flex;
-    flex-direction:column;
-    align-items:center;
-    min-width:90px;
-    flex-shrink:0;
-    background:rgba(255,255,255,0.65);
-    border:1px solid rgba(193,127,36,0.25);
-    border-radius:16px;
-    padding:14px 10px;
-    cursor:pointer;"
-    onclick="this.style.border=
-    '1.5px solid #C17F24'">
-    <span style="font-size:20px;
-    font-weight:700;color:#1A1208;">
-    한국어</span>
-    <span style="font-size:11px;
-    color:#6B5B3E;margin-top:4px;">
-    Korean</span>
+  <div class="lang-card glass-card" onclick="selectLang(this)">
+    <div class="lang-script">한국어</div>
+    <div class="lang-name">Korean</div>
   </div>
-
-  <div style="
-    display:inline-flex;
-    flex-direction:column;
-    align-items:center;
-    min-width:90px;
-    flex-shrink:0;
-    background:rgba(255,255,255,0.65);
-    border:1px solid rgba(193,127,36,0.25);
-    border-radius:16px;
-    padding:14px 10px;
-    cursor:pointer;"
-    onclick="this.style.border=
-    '1.5px solid #C17F24'">
-    <span style="font-size:20px;
-    font-weight:700;color:#1A1208;">
-    中文</span>
-    <span style="font-size:11px;
-    color:#6B5B3E;margin-top:4px;">
-    Chinese</span>
+  <div class="lang-card glass-card" onclick="selectLang(this)">
+    <div class="lang-script">中文</div>
+    <div class="lang-name">Chinese</div>
   </div>
-
-  <div style="
-    display:inline-flex;
-    flex-direction:column;
-    align-items:center;
-    min-width:90px;
-    flex-shrink:0;
-    background:rgba(255,255,255,0.65);
-    border:1px solid rgba(193,127,36,0.25);
-    border-radius:16px;
-    padding:14px 10px;
-    cursor:pointer;"
-    onclick="this.style.border=
-    '1.5px solid #C17F24'">
-    <span style="font-size:20px;
-    font-weight:700;color:#1A1208;">
-    ไทย</span>
-    <span style="font-size:11px;
-    color:#6B5B3E;margin-top:4px;">
-    Thai</span>
+  <div class="lang-card glass-card" onclick="selectLang(this)">
+    <div class="lang-script">ไทย</div>
+    <div class="lang-name">Thai</div>
   </div>
-
-  <div style="
-    display:inline-flex;
-    flex-direction:column;
-    align-items:center;
-    min-width:90px;
-    flex-shrink:0;
-    background:rgba(255,255,255,0.65);
-    border:1px solid rgba(193,127,36,0.25);
-    border-radius:16px;
-    padding:14px 10px;
-    cursor:pointer;"
-    onclick="this.style.border=
-    '1.5px solid #C17F24'">
-    <span style="font-size:20px;
-    font-weight:700;color:#1A1208;">
-    Bahasa</span>
-    <span style="font-size:11px;
-    color:#6B5B3E;margin-top:4px;">
-    Indonesian</span>
+  <div class="lang-card glass-card" onclick="selectLang(this)">
+    <div class="lang-script">Bahasa</div>
+    <div class="lang-name">Indonesian</div>
   </div>
 </div>
 
 <div style="padding:16px;
 position:sticky;bottom:0;
 background:#FFF8E7;">
-<button onclick="goTo('s-home')"
+<button onclick="confirmLanguage()"
 style="background:rgba(255,255,255,0.7);
 border:1.5px solid rgba(193,127,36,0.5);
 border-radius:100px;color:#C17F24;
@@ -611,8 +521,9 @@ Confirm Language
   </div>
 
   <div style="display:flex; align-items:center; justify-content:space-between; margin:0 16px 8px; padding:10px 16px; background:rgba(255,255,255,0.65); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid rgba(193,127,36,0.25); border-radius:100px; font-size:13px;">
-    <span style="color:#6B5B3E;">Translating to:</span>
+    <span style="color:#6B5B3E;">Translate my messages to:</span>
     <select id="target-language" style="border:none; background:transparent; color:#C17F24; font-weight:700; font-size:13px; font-family:Outfit,sans-serif; outline:none; cursor:pointer;">
+      <option value="English">English</option>
       <option value="Tamil">தமிழ் Tamil</option>
       <option value="Hindi">हिन्दी Hindi</option>
       <option value="Telugu">తెలుగు Telugu</option>
@@ -682,7 +593,10 @@ Confirm Language
     <div style="font-size:22px; color:#B8A88A; cursor:pointer;">+</div>
     <input id="chat-input" placeholder="Type a message..." style="flex:1; border:none; background:transparent; font-size:15px; color:#1A1208; outline:none; font-family:Outfit,sans-serif;"/>
     <button id="mic-btn" style="width:42px; height:42px; background:#C17F24; border-radius:50%; border:none; display:flex; align-items:center; justify-content:center; font-size:18px; cursor:pointer;">🎙️</button>
+    <button id="send-btn" style="width:42px; height:42px; background:#C17F24; border-radius:50%; border:none; display:none; align-items:center; justify-content:center; font-size:18px; cursor:pointer; color:white;" onclick="sendMessage()">➤</button>
   </div>
+
+  <div id="lang-indicator" style="position:fixed; bottom:132px; left:50%; transform:translateX(-50%); font-size:11px; color:#B8A88A; text-align:center; z-index:998; pointer-events:none; white-space:nowrap;"></div>
 
   <div style="position:fixed; bottom:16px; left:50%; transform:translateX(-50%); width:calc(100% - 40px); max-width:350px; background:rgba(255,255,255,0.85); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(193,127,36,0.2); border-radius:100px; display:flex; justify-content:space-around; align-items:center; padding:12px 8px; z-index:1000;">
     <div onclick="goTo('s-home')" style="display:flex; flex-direction:column; align-items:center; cursor:pointer; font-size:10px; gap:2px; color:#C17F24;">
@@ -822,9 +736,31 @@ Confirm Language
 </div>
 
   <script>
-    let recognition = null;
-    let isListening = false;
-    let isHolding = false;
+    // Voice recording variables
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let isRecording = false;
+
+    // Language code mapping for Sarvam
+    const LANG_CODES = {
+      'Tamil': 'ta-IN',
+      'Hindi': 'hi-IN',
+      'Telugu': 'te-IN',
+      'Kannada': 'kn-IN',
+      'Malayalam': 'ml-IN',
+      'Bengali': 'bn-IN',
+      'Marathi': 'mr-IN',
+      'Gujarati': 'gu-IN',
+      'Punjabi': 'pa-IN',
+      'Odia': 'or-IN',
+      'Urdu': 'ur-IN',
+      'Assamese': 'as-IN',
+      'Japanese': 'ja-JP',
+      'Korean': 'ko-KR',
+      'Chinese': 'zh-CN',
+      'Thai': 'th-TH',
+      'Indonesian': 'id-ID'
+    };
 
     const CONTACTS = [
       { id: 'rajesh', initials: 'RK', name: 'Rajesh Kumar', language: 'Hindi', native: 'हिन्दी', code: 'HI' },
@@ -835,6 +771,35 @@ Confirm Language
       { id: 'harpreet', initials: 'HS', name: 'Harpreet Singh', language: 'Punjabi', native: 'ਪੰਜਾਬੀ', code: 'PA' },
       { id: 'kavya', initials: 'KR', name: 'Kavya Reddy', language: 'Kannada', native: 'ಕನ್ನಡ', code: 'KN' }
     ];
+
+    let userLanguage = 'English';
+
+    function setUserLanguage(lang) {
+      userLanguage = lang;
+      localStorage.setItem('user_language', lang);
+    }
+
+    function getUserLanguage() {
+      return localStorage.getItem('user_language') || 'English';
+    }
+
+    function confirmLanguage() {
+      const selected = document
+        .querySelector('.lang-card.selected');
+
+      if (!selected) {
+        toast('Please select a language first');
+        return;
+      }
+
+      const langName = selected
+        .querySelector('.lang-name')
+        .textContent.trim();
+
+      setUserLanguage(langName);
+      toast('Language set to ' + langName);
+      goTo('s-home');
+    }
 
     let currentContact = null;
 
@@ -1077,6 +1042,8 @@ Confirm Language
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById('s-chat').classList.add('active');
       window.scrollTo(0,0);
+
+      updateLangIndicator();
     }
 
     function renderChatMessages(contactId) {
@@ -1228,119 +1195,200 @@ Confirm Language
     const chatInput = document.getElementById('chat-input');
     const micBtn = document.getElementById('mic-btn');
 
-    micBtn.addEventListener('touchstart', startListening);
-    micBtn.addEventListener('touchend', stopListening);
-    micBtn.addEventListener('click', toggleListening);
-
-    async function startListening(e) {
+    micBtn.addEventListener('touchstart', function(e) {
       e.preventDefault();
-      if (isListening) return;
-      isHolding = true;
+      toggleRecording(e);
+    });
+    micBtn.addEventListener('click', function(e) {
+      toggleRecording(e);
+    });
 
-      const SpeechRecognition =
-        window.SpeechRecognition
-        || window.webkitSpeechRecognition;
-
-      if (!SpeechRecognition) {
-        toast('Voice not supported here');
-        return;
-      }
+    async function startRecording(e) {
+      if (e) e.preventDefault();
+      if (isRecording) return;
 
       try {
-        // Request mic permission first
-        await navigator.mediaDevices
-          .getUserMedia({ audio: true });
-      } catch(err) {
-        toast('Please allow microphone access and try again');
-        return;
-      }
+        const stream = await navigator
+          .mediaDevices
+          .getUserMedia({audio: true});
 
-      recognition = new SpeechRecognition();
-      recognition.continuous = true;
-      recognition.interimResults = true;
-      recognition.lang = 'en-IN';
+        audioChunks = [];
 
-      recognition.onstart = function() {
-        isListening = true;
+        let mimeType = 'audio/webm';
+        if (MediaRecorder.isTypeSupported('audio/mp4')) {
+          mimeType = 'audio/mp4';
+        } else if (MediaRecorder.isTypeSupported('audio/webm;codecs=opus')) {
+          mimeType = 'audio/webm;codecs=opus';
+        } else if (MediaRecorder.isTypeSupported('audio/webm')) {
+          mimeType = 'audio/webm';
+        }
+
+        mediaRecorder = new MediaRecorder(
+          stream,
+          {mimeType: mimeType}
+        );
+        mediaRecorder.mimeType = mimeType;
+
+        mediaRecorder.ondataavailable = function(e) {
+          if (e.data.size > 0) {
+            audioChunks.push(e.data);
+          }
+        };
+
+        mediaRecorder.onstop = async function() {
+          // Stop all tracks
+          stream.getTracks().forEach(t => t.stop());
+
+          const audioBlob = new Blob(
+            audioChunks,
+            {type: mediaRecorder.mimeType || 'audio/webm'}
+          );
+
+          await processVoice(audioBlob);
+        };
+
+        mediaRecorder.start();
+        isRecording = true;
+
+        // Update mic button UI
         micBtn.style.background = '#7C3AED';
         micBtn.style.transform = 'scale(1.2)';
         micBtn.innerHTML = '🔴';
-        toast('Listening... speak now');
-      };
 
-      recognition.onresult = function(e) {
-        let transcript = '';
-        for(let i = e.resultIndex;
-          i < e.results.length; i++) {
-          transcript +=
-            e.results[i][0].transcript;
-        }
-        chatInput.value = transcript;
-      };
+        toast('Recording... tap again to send');
 
-      recognition.onerror = function(e) {
-        if (e.error === 'not-allowed') {
-          toast('Microphone blocked. '
-            + 'Check browser settings.');
-        } else {
-          toast('Mic error: ' + e.error);
-        }
-        resetMicBtn();
-      };
-
-      recognition.onend = function() {
-        isListening = false;
-        
-        if (chatInput.value.trim()
-          .length > 0) {
-          micBtn.innerHTML = '➤';
-          micBtn.style.background = '#C17F24';
-          micBtn.style.transform = 'scale(1)';
-          micBtn.onclick = sendMessage;
-        } else {
-          resetMicBtn();
-        }
-      };
-
-      recognition.start();
-      console.log('Recognition started, lang:', recognition.lang);
-    }
-
-    function stopListening(e) {
-      e.preventDefault();
-      isHolding = false;
-      if (recognition && isListening) {
-        recognition.stop();
+      } catch(err) {
+        console.error('Recording error:', err);
+        toast('Microphone error: ' + err.message);
       }
     }
 
-    function toggleListening(e) {
-      if (isListening) {
-        stopListening(e);
+    function stopRecording(e) {
+      if (e) e.preventDefault();
+      if (!isRecording || !mediaRecorder) return;
+
+      mediaRecorder.stop();
+      isRecording = false;
+
+      // Reset mic button
+      micBtn.style.background = '#C17F24';
+      micBtn.style.transform = 'scale(1)';
+      micBtn.innerHTML = '🎙️';
+
+      toast('Processing...');
+    }
+
+    async function processVoice(audioBlob) {
+      try {
+        const reader = new FileReader();
+
+        reader.onloadend = async function() {
+          const base64 = reader.result.split(',')[1];
+
+          // Get the language user speaks (set in Language Picker)
+          const spokenLang = getUserLanguage();
+
+          const SARVAM_LANG_CODES = {
+            'English':    'en-IN',
+            'Hindi':      'hi-IN',
+            'Tamil':      'ta-IN',
+            'Telugu':     'te-IN',
+            'Kannada':    'kn-IN',
+            'Malayalam':  'ml-IN',
+            'Bengali':    'bn-IN',
+            'Marathi':    'mr-IN',
+            'Gujarati':   'gu-IN',
+            'Punjabi':    'pa-IN',
+            'Odia':       'or-IN',
+            'Urdu':       'ur-IN',
+            'Assamese':   'as-IN',
+            'Japanese':   'ja-JP',
+            'Korean':     'ko-KR',
+            'Chinese':    'zh-CN',
+            'Thai':       'th-TH',
+            'Indonesian': 'id-ID'
+          };
+
+          const userLang = SARVAM_LANG_CODES[spokenLang] || 'en-IN';
+
+          // Call Sarvam STT via Worker
+          const transcribeResponse = await fetch(
+            'https://tight-leaf-c6be.jpsoarlcv.workers.dev/transcribe',
+            {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                audioBase64: base64,
+                languageCode: userLang,
+                mimeType: mediaRecorder.mimeType || 'audio/webm'
+              })
+            }
+          );
+
+          if (!transcribeResponse.ok) {
+            const err = await transcribeResponse.json();
+            throw new Error(err.error || 'Transcription failed');
+          }
+
+          const transcribeData = await transcribeResponse.json();
+          const transcript = transcribeData.transcript;
+
+          if (!transcript || transcript.trim() === '') {
+            toast('Could not hear you. Try again.');
+            return;
+          }
+
+          // Put transcript in input
+          chatInput.value = transcript;
+
+          // Show send button
+          const sendBtn = document.getElementById('send-btn');
+          if (sendBtn) {
+            micBtn.style.display = 'none';
+            sendBtn.style.display = 'flex';
+          }
+
+          toast('Tap send to translate!');
+        };
+
+        reader.readAsDataURL(audioBlob);
+
+      } catch(err) {
+        console.error('Voice processing error:', err);
+        toast('Voice error: ' + err.message);
+      }
+    }
+
+    function toggleRecording(e) {
+      if (isRecording) {
+        stopRecording(e);
       } else {
-        startListening(e);
+        startRecording(e);
       }
     }
 
     function resetMicBtn() {
-      isListening = false;
+      isRecording = false;
+      mediaRecorder = null;
       micBtn.style.background = '#C17F24';
       micBtn.style.transform = 'scale(1)';
       micBtn.innerHTML = '🎙️';
-      micBtn.onclick = function() {
-        goTo('s-recording');
-      };
+      micBtn.style.display = 'flex';
+      const sendBtn = document.getElementById('send-btn');
+      if (sendBtn) sendBtn.style.display = 'none';
     }
+
+    const sendBtn = document.getElementById('send-btn');
 
     chatInput.addEventListener('input', function() {
       if (chatInput.value.trim().length > 0) {
-        micBtn.innerHTML = '➤';
-        micBtn.onclick = sendMessage;
+        micBtn.style.display = 'none';
+        sendBtn.style.display = 'flex';
       } else {
-        micBtn.innerHTML = '🎙️';
-        micBtn.onclick = function() {
-          goTo('s-recording');
-        };
+        micBtn.style.display = 'flex';
+        sendBtn.style.display = 'none';
       }
     });
 
@@ -1355,10 +1403,8 @@ Confirm Language
 
       // Clear input immediately
       chatInput.value = '';
-      micBtn.innerHTML = '🎙️';
-      micBtn.onclick = function() {
-        goTo('s-recording');
-      };
+      micBtn.style.display = 'flex';
+      sendBtn.style.display = 'none';
 
       const emptyState = messagesArea.querySelector('div[style*="No messages"]');
       if (emptyState) emptyState.remove();
@@ -1405,7 +1451,7 @@ Confirm Language
           type: 'sent',
           original: text,
           translated: translated,
-          badge: 'EN',
+          badge: getUserLanguage().substring(0, 2).toUpperCase(),
           timestamp: Date.now(),
           read: true
         };
@@ -1422,10 +1468,51 @@ Confirm Language
       }
     }
 
-    window.onload = function(){ 
+    window.onload = function() {
       renderContacts();
       renderHome();
-      goTo('s-splash'); 
+
+      // Restore saved language in dropdown
+      const savedLang = getUserLanguage();
+      const dropdown = document.getElementById('target-language');
+      if (dropdown && savedLang && savedLang !== 'English') {
+        for (let i = 0; i < dropdown.options.length; i++) {
+          if (dropdown.options[i].value === savedLang) {
+            dropdown.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      // Pre-select saved language card in the language picker
+      if (savedLang && savedLang !== 'English') {
+        document.querySelectorAll('.lang-card').forEach(function(card) {
+          const nameEl = card.querySelector('.lang-name');
+          if (nameEl && nameEl.textContent.trim() === savedLang) {
+            card.classList.add('selected');
+          }
+        });
+      }
+
+      // Wire dropdown change to update indicator
+      if (dropdown) {
+        dropdown.addEventListener('change', updateLangIndicator);
+      }
+
+      goTo('s-splash');
+    }
+
+    function updateLangIndicator() {
+      const indicator = document.getElementById('lang-indicator');
+      if (!indicator) return;
+      const speakingLang = getUserLanguage();
+      const dropdown = document.getElementById('target-language');
+      const translatingTo = dropdown
+        ? dropdown.options[dropdown.selectedIndex].value
+        : '';
+      indicator.textContent =
+        '🎙️ Speaking in ' + speakingLang +
+        ' → 📝 Sending as ' + translatingTo;
     }
   </script>
 </body>
